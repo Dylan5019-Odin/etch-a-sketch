@@ -44,7 +44,7 @@ const clearGrid = () => {
   grid.replaceChildren();
 }
 
-//Function that generates a random HSLA color
+//Function that generates a random color
 function getRandomColor() {
   var letters = "0123456789ABCDEF";
   var color = "#";
