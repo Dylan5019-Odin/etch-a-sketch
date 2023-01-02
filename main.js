@@ -32,7 +32,7 @@ const generateGrid = (gridSize) => {
   let gridBoxes = document.querySelectorAll("#grid-box").forEach((box) => {
     box.addEventListener("mouseenter", () => {
         if(box.style.background == ''){
-            box.style.background = randomRgbaString(1);
+            box.style.background = getRandomColor();
         } 
     });
   });
@@ -45,10 +45,11 @@ const clearGrid = () => {
 }
 
 //Function that generates a random HSLA color
-function randomRgbaString(alpha) {
-  let r = Math.floor(Math.random() * 255);
-  let g = Math.floor(Math.random() * 255);
-  let b = Math.floor(Math.random() * 255);
-  let a = alpha;
-  return `rgba(${r},${g},${b},${a})`;
+function getRandomColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
