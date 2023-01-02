@@ -1,0 +1,27 @@
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    border: 1px solid black;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    gap: 1px;
+    width: 50rem;
+    height: 50rem;
+}
+
+.grid div {
+    height: auto;
+    width:  auto; 
+}
+
+
+.blue {
+    background: blue;
+}
