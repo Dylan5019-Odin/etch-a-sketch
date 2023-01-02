@@ -31,7 +31,9 @@ const generateGrid = (gridSize) => {
   //that add a class to the grid element chaning its background color
   let gridBoxes = document.querySelectorAll("#grid-box").forEach((box) => {
     box.addEventListener("mouseenter", () => {
-      box.classList.add("blue");
+        if(box.style.background == ''){
+            box.style.background = randomRgbaString(1);
+        } 
     });
   });
 };
@@ -40,4 +42,13 @@ const generateGrid = (gridSize) => {
 //A function that clears the grid element of all its children
 const clearGrid = () => {
   grid.replaceChildren();
+}
+
+//Function that generates a random HSLA color
+function randomRgbaString(alpha) {
+  let r = Math.floor(Math.random() * 255);
+  let g = Math.floor(Math.random() * 255);
+  let b = Math.floor(Math.random() * 255);
+  let a = alpha;
+  return `rgba(${r},${g},${b},${a})`;
 }
